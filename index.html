@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Soumission d'assurance auto</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <form id="formulaire">
+
+        <label for="genre">Genre:</label>
+        <select id="genre" required>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+            <option value="non-binaire">Non-binaire</option>
+        </select>
+        
+        <label for="date-naissance">Date de naissance:</label>
+        <input type="date" id="date-naissance" required>
+
+        <label for="valeur-achat">Valeur d'achat de votre véhicule:</label>
+        <input type="number" id="valeur-achat" required>
+
+        <label for="annee-fabrication">Année de fabrication de votre véhicule:</label>
+        <input type="number" id="annee-fabrication" required>
+
+        <label for="kilometres">Nombre de kilomètres parcourus par an:</label>
+        <input type="number" id="kilometres" required>
+
+        <label for="camera-recul">Votre véhicule possède-t-il une caméra de recul ?</label>
+        <input type="radio" name="camera-recul" value="camera-oui" required> Oui
+        <input type="radio" name="camera-recul" value="camera-non" checked required> Non
+        <br><br>
+
+        <label for="reclamations">Avez-vous fait des réclamations d'assurance ces six dernières années ?</label>
+        <input type="radio" name="reclamations" value="reclamations-oui" required> Oui
+        <input type="radio" name="reclamations" value="reclamations-non" checked required> Non
+        <br><br>
+
+        <div id="reclamations-resultat" class="invisible">
+            <label for="nombre-reclamations">Combien de réclamations avez-vous faites ?</label>
+            <input type="number" id="nombre-reclamations" min="1">
+            <div id="reclamations-montant"></div>
+        </div>
+        
+        <button id="calculer">Calculer</button>
+    </form>
+
+    <div id="resultat"></div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
